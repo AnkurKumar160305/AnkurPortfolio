@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Orbitron:wght@800&display=swap');
+
+.timeline-outer {
+  padding: 100px 0;
+  background: transparent;
+}
+
+/* Timeline Header */
+/* Old .timeline-title removed */
+
+/* Update these specific classes in your existing CSS */
+
+.timeline-header {
+  text-align: center;
+  /* Added more margin here (increased from 80px to 140px) */
+  margin-bottom: 140px;
+  position: relative;
+}
+
+.timeline-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 12px;
+  /* Pure white with glow for maximum visibility */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(200, 200, 200, 0.3);
+  margin: 0;
+  transition: all 0.5s ease;
+}
+
+.timeline-title:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(200, 200, 200, 0.5);
+}
+
+.title-accent {
+  width: 80px;
+  height: 4px;
+  background: #ff0000;
+  /* Increased margin-top to separate it from the text */
+  margin: 30px auto 0 auto;
+  box-shadow: 0 0 15px #ff0000;
+  border-radius: 2px;
+}
+
+.timeline-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Central Line */
+.timeline-line-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 4px;
+  z-index: 0;
+}
+
+.timeline-base-line {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.timeline-active-line {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff0000, #8b0000, #4a0000);
+  box-shadow: 0 0 20px #ff0000;
+}
+
+/* Card Layout */
+.timeline-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  display: flex;
+  z-index: 2;
+}
+
+.item-left {
+  align-self: flex-start;
+  padding-right: 80px;
+  justify-content: flex-end;
+}
+
+.item-right {
+  align-self: flex-end;
+  padding-left: 80px;
+  justify-content: flex-start;
+}
+
+/* THE SPECIAL BORDER EFFECT */
+.special-card-container {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  /* Clips the rotating light */
+  padding: 2px;
+  /* This defines the border thickness */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Rotating Light "Snake" */
+.border-glow-animation {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(transparent,
+      transparent,
+      transparent,
+      transparent,
+      #ff0000,
+      #8b0000,
+      #ff4d4d);
+  animation: rotateBorder 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Inner Card Content (The mask) */
+.card-inner-content {
+  position: relative;
+  z-index: 1;
+  background: #0a0a0a;
+  /* High contrast dark */
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  padding: 35px;
+  transition: background 0.3s ease;
+}
+
+.special-card-container:hover .card-inner-content {
+  background: #111;
+  /* Lightens slightly on hover */
+}
+
+/* Typography & Visuals */
+.year-label {
+  color: #ff0000;
+  font-family: 'Orbitron';
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.role-text {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+
+.company-row {
+  color: #ff4d4d;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.description-text {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.skill-pill {
+  display: inline-block;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin: 10px 8px 0 0;
+  font-size: 0.75rem;
+  color: #ff9999;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Node Styling */
+.timeline-node {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 4px solid #ff0000;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #ff0000;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.item-left .timeline-node {
+  right: -9px;
+}
+
+.item-right .timeline-node {
+  left: -9px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-line-container {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px !important;
+    padding-right: 0 !important;
+  }
+
+  .timeline-node {
+    left: 13px !important;
+  }
+
+  .timeline-title {
+    font-size: 2.2rem;
+    letter-spacing: 5px;
+  }
+}

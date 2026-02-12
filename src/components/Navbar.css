@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Rajdhani', sans-serif;
+  padding: 15px 50px;
+  margin: 30px 20px;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.navTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(200, 200, 200, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navTitle:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(200, 200, 200, 0.5);
+}
+
+.navLinks {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #ff0000;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Right wrapper */
+.rightWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  min-width: 150px;
+  /* fixed space for icons + hamburger */
+  justify-content: flex-end;
+}
+
+/* Social icons */
+.socialIconsWrapper {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.socialIcon {
+  width: 28px;
+  /* fixed width */
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  filter: invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.4) rotate(10deg);
+  filter: invert(0.7) drop-shadow(0 0 8px #fff);
+}
+
+/* Hamburger */
+.hamburgerWrapper {
+  display: none;
+  position: relative;
+  width: 35px;
+  /* fixed width for hamburger */
+  flex-shrink: 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile overlay */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  max-width: 300px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px;
+  gap: 20px;
+  transition: right 0.4s ease;
+  z-index: 15;
+  border-left: 2px solid #ff0000;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.mobileOverlay.show {
+  right: 0;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  color: #ff0000;
+  transform: scale(1.2);
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+}
+
+.mobileLink {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s;
+  padding: 10px 0;
+}
+
+.mobileLink:hover {
+  color: #ff0000;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .hamburgerWrapper {
+    display: block;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+}

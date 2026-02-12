@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.about-section {
+  padding: 60px 20px;
+  font-family: 'Rajdhani', sans-serif;
+  color: #ddd;
+}
+
+/* TITLE */
+.about-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 60px;
+  transition: all 0.5s ease;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(200, 200, 200, 0.3);
+}
+
+.about-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(200, 200, 200, 0.5);
+}
+
+/* CONTENT LAYOUT */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-left,
+.about-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.about-left {
+  flex: 2;
+}
+
+.about-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-text:hover {
+  transform: translateY(-2px);
+}
+
+/* HIGHLIGHTED TEXT */
+.highlight {
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff0000, #ff4d4d, #b30000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.highlight:hover {
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+/* TECH GRID */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.tech-box {
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.02);
+  backdrop-filter: blur(5px);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle shine effect */
+.tech-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: 0.5s;
+}
+
+.tech-box:hover::before {
+  left: 100%;
+}
+
+
+
+.tech-icon-wrapper {
+  font-size: 2.5rem;
+  color: #ff0000;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4));
+  transition: transform 0.4s ease;
+}
+
+.tech-box:hover .tech-icon-wrapper {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
+}
+
+.tech-box h3 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  transition: all 0.4s ease;
+}
+
+/* ... */
+
+.tech-box:hover h3 {
+  color: #ff4d4d;
+}
+
+/* RIGHT SIDE - Skills Box */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+  padding: 25px;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.02);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+}
+
+.about-right:hover {
+  border-color: rgba(255, 0, 0, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 0, 0, 0.15);
+}
+
+.skills-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: all 0.4s ease;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(200, 200, 200, 0.3);
+}
+
+.skills-title:hover {
+  color: #ffffff;
+  transform: scale(1.05) rotate(-1deg);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(200, 200, 200, 0.5);
+}
+
+.skills-desc {
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-desc:hover {
+  color: #ff0000;
+  transform: translateY(-2px);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.skill-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.skill-percent {
+  color: #ff0000;
+}
+
+.skill-bar {
+  height: 12px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff0000, #b30000);
+  border-radius: 8px;
+  transition: width 1s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent);
+  z-index: 1;
+  background-size: 20px 20px;
+  animation: move 2s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* RESPONSIVE */
+@media (min-width: 1024px) {
+  .about-content {
+    flex-direction: row;
+    gap: 80px;
+    align-items: stretch;
+  }
+
+  .about-left,
+  .about-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    margin-top: 30px;
+  }
+}

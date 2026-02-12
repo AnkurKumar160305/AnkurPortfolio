@@ -1,0 +1,194 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* MAIN CONTAINER */
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 80px;
+    min-height: 100vh;
+    position: relative;
+    flex-wrap: wrap;
+    /* keeps responsive layout */
+}
+
+/* LEFT CONTENT */
+.left-main {
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 600px;
+    z-index: 2;
+    /* ensures above right content */
+    position: relative;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* MAIN HEADING */
+.main-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(200, 200, 200, 0.3);
+    transition: all 0.5s ease;
+}
+
+.main-heading:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(200, 200, 200, 0.5);
+}
+
+/* SUBTITLE */
+.main-para {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffcccc;
+    letter-spacing: 0.5px;
+}
+
+/* DESCRIPTION */
+.main-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e5e7eb;
+    opacity: 0.9;
+}
+
+/* BUTTONS ROW */
+.button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* BUTTON BASE STYLE */
+.resume,
+.contact-me-btn {
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* RESUME BUTTON */
+.resume {
+    background: linear-gradient(90deg, #ff0000, #800000);
+    color: #fff;
+}
+
+.resume:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+/* CONTACT ME BUTTON */
+.contact-me-btn {
+    background: linear-gradient(90deg, #ff3300, #cc0000);
+    color: #fff;
+}
+
+.contact-me-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 51, 0, 0.4);
+}
+
+/* RIGHT CONTENT */
+.right-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    /* behind navbar */
+    position: absolute;
+    top: -165px;
+    right: -100px;
+    overflow: hidden;
+    /* ensures blur mask doesn't overflow */
+}
+
+/* IMAGE STYLING WITH SUBTLE EFFECT */
+.final-img {
+    width: 750px;
+    height: 750px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+    display: block;
+
+    /* Add bottom fade effect */
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: bottom;
+    mask-image: linear-gradient(to top, transparent 0%, black 40%, black 100%);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-position: bottom;
+}
+
+.final-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ENSURE NAVBAR STAYS ABOVE RIGHT CONTENT */
+.navbar {
+    position: relative;
+    z-index: 3;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+
+    .left-main {
+        max-width: 100%;
+    }
+
+    .right-main {
+        max-width: 90%;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+    .main-heading {
+        font-size: 2.4rem;
+    }
+
+    .main-para {
+        font-size: 1.4rem;
+    }
+
+    .main-desc {
+        font-size: 1rem;
+    }
+
+    .resume,
+    .contact-me-btn {
+        font-size: 0.95rem;
+        padding: 10px 25px;
+    }
+
+    .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}

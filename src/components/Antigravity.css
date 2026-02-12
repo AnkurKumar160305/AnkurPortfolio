@@ -1,0 +1,42 @@
+.antigravity {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%); */
+}
+
+.antigravity canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1;
+}
+
+
+
+/* Custom glowing cursor */
+body {
+  cursor: none;
+}
+
+
+
+.cursor-glow {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff, 0 0 24px #ffffff;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.8); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}

@@ -1,0 +1,305 @@
+/* =========================
+   SECTION
+========================= */
+.cards {
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+.projects-heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.projects-title {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 10px rgba(200, 200, 200, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-title:hover {
+  animation: shimmer-text 3s linear infinite;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(200, 200, 200, 0.5);
+}
+
+.projects-title span {
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer-text {
+  0% {
+    background-position: 200% 0;
+  }
+
+  50% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.projects-subtitle {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  max-width: 640px;
+  line-height: 1.7;
+  margin-inline: auto;
+  text-align: center;
+  font-weight: 500;
+  color: #d3d3d3;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.2), 0 0 6px rgba(200, 200, 200, 0.2);
+  transition: all 0.4s ease;
+}
+
+.projects-subtitle span {
+  font-weight: 600;
+  background: linear-gradient(90deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-subtitle:hover {
+  animation: shimmer-text 3s linear infinite;
+}
+
+
+
+
+/* =========================
+   CARDS GRID
+========================= */
+.cards-grid {
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+.cards-grid:hover {
+  opacity: 1 !important;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  will-change: transform;
+}
+
+.card:hover {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 35px 90px rgba(255, 0, 0, 0.35);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.image-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover img {
+  transform: scale(1.15);
+}
+
+/* Overlay */
+.view-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.25));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-wrapper:hover .view-overlay {
+  opacity: 1;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+  padding: 1.7rem;
+  text-align: center;
+}
+
+/* Title */
+.heading {
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+/* Description */
+.text {
+  font-size: 0.95rem;
+  color: #d3d3d3;
+  line-height: 1.6;
+  margin-bottom: 1.3rem;
+}
+
+/* =========================
+   TECH STACK
+========================= */
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.primary-btn {
+  padding: 0.65rem 1.8rem;
+  border-radius: 30px;
+  border: 1px solid #cccccc;
+  /* subtle silver border */
+  background: linear-gradient(135deg, #ffffff 0%, #bbbbbb 100%);
+  /* white → light silver */
+  color: #000;
+  /* black text for contrast */
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2), 0 0 15px rgba(200, 200, 200, 0.25);
+  position: relative;
+  overflow: hidden;
+  background-size: 200% 100%;
+}
+
+/* Hover shimmer & glow */
+.primary-btn:hover {
+  color: #000;
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.5), 0 0 35px rgba(200, 200, 200, 0.5);
+  background-position: 100% 0;
+  animation: shimmer-btn 2.5s linear infinite;
+}
+
+@keyframes shimmer-btn {
+  0% {
+    background-position: 200% 0;
+  }
+
+  50% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+/* =========================
+   ICON BUTTONS
+========================= */
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-5px) scale(1.08);
+}
+
+/* GitHub */
+.github-btn:hover {
+  background: linear-gradient(135deg, #333333, #000000);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.85);
+}
+
+/* LinkedIn */
+.linkedin-btn:hover {
+  background: linear-gradient(135deg, #cc0000, #800000);
+  box-shadow: 0 0 22px rgba(204, 0, 0, 0.85);
+}
+
+/* Icons */
+.icon {
+  width: 22px;
+  filter: invert(1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
