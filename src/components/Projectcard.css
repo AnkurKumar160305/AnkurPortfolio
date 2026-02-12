@@ -1,6 +1,4 @@
-/* =========================
-   SECTION
-========================= */
+
 .cards {
   padding: 5rem 2rem;
   display: flex;
@@ -8,10 +6,6 @@
   align-items: center;
 }
 
-
-/* =========================
-   HEADING
-========================= */
 .projects-heading {
   text-align: center;
   margin-bottom: 4rem;
@@ -80,12 +74,6 @@
   animation: shimmer-text 3s linear infinite;
 }
 
-
-
-
-/* =========================
-   CARDS GRID
-========================= */
 .cards-grid {
   width: 100%;
   max-width: 1300px;
@@ -99,9 +87,6 @@
   opacity: 1 !important;
 }
 
-/* =========================
-   CARD
-========================= */
 .card {
   width: 380px;
   background: rgba(255, 255, 255, 0.08);
@@ -120,9 +105,6 @@
   box-shadow: 0 35px 90px rgba(255, 0, 0, 0.35);
 }
 
-/* =========================
-   IMAGE
-========================= */
 .image-wrapper {
   position: relative;
   display: block;
@@ -140,7 +122,6 @@
   transform: scale(1.15);
 }
 
-/* Overlay */
 .view-overlay {
   position: absolute;
   inset: 0;
@@ -161,9 +142,6 @@
   opacity: 1;
 }
 
-/* =========================
-   CONTENT
-========================= */
 .content {
   padding: 1.7rem;
   text-align: center;
@@ -185,9 +163,6 @@
   margin-bottom: 1.3rem;
 }
 
-/* =========================
-   TECH STACK
-========================= */
 .tech-stack {
   display: flex;
   justify-content: center;
@@ -205,9 +180,6 @@
   backdrop-filter: blur(10px);
 }
 
-/* =========================
-   BUTTONS
-========================= */
 .buttons {
   display: flex;
   justify-content: center;
@@ -257,10 +229,6 @@
   }
 }
 
-
-/* =========================
-   ICON BUTTONS
-========================= */
 .icon-btn {
   width: 42px;
   height: 42px;
@@ -295,9 +263,6 @@
   filter: invert(1);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 480px) {
   .card {
     width: 100%;

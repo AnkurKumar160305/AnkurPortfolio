@@ -6,6 +6,7 @@ import { MdOutlineInsights, MdOutlineStar } from "react-icons/md";
 import "./Competitive.css";
 
 const LEETCODE_USERNAME = "Ankur160305";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const Competitive = () => {
   const [stats, setStats] = useState({
@@ -19,9 +20,9 @@ const Competitive = () => {
     async function fetchStats() {
       try {
         const [lcRes, gfgRes, nRes] = await Promise.all([
-          fetch("http://localhost:5000/api/leetcode"),
-          fetch("http://localhost:5000/api/gfg"),
-          fetch("http://localhost:5000/api/naukri"),
+          fetch(`${BASE_URL}/api/leetcode`),
+          fetch(`${BASE_URL}/api/gfg`),
+          fetch(`${BASE_URL}/api/naukri`),
         ]);
 
         // Parse responses with error handling

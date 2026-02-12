@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { CometCard } from "./ui/comet-card";
 import "./Projectcard.css";
 import { projects } from "../data/projects";
+import githubIcon from "../assets/github.png";
+import linkedinIcon from "../assets/linkedin.png";
 
 const Projectcard = () => {
   return (
@@ -58,7 +60,7 @@ const Projectcard = () => {
                   >
                     <img
                       className="icon github"
-                      src="./src/assets/github.png"
+                      src={githubIcon}
                       alt="GitHub"
                     />
                   </a>
@@ -71,7 +73,7 @@ const Projectcard = () => {
                   >
                     <img
                       className="icon linkedin"
-                      src="./src/assets/linkedin.png"
+                      src={linkedinIcon}
                       alt="LinkedIn"
                     />
                   </a>
