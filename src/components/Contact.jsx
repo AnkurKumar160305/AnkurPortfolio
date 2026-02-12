@@ -25,7 +25,7 @@ const Card = () => {
     setIsSending(true);
 
     // Replace these with your actual IDs from EmailJS Dashboard
-    const SERVICE_ID = "service_rdcu5oq"; 
+    const SERVICE_ID = "service_rdcu5oq";
     const TEMPLATE_ID = "template_drkz709";
     const PUBLIC_KEY = "xgEAcKTkwbuhP5oRC";
 
@@ -66,9 +66,9 @@ const Card = () => {
 
             <div style={styles.bottom} className="bottom">
               <div style={styles.content}>
-                <span style={styles.name}>John Doe</span>
+                <span style={styles.name}>Ankur Kumar</span>
                 <span style={styles.aboutMe}>
-                  Full Stack Developer passionate about creating beautiful and functional web experiences.
+                  Full Stack Developer passionate about building high-performance, interactive, and user-centric web applications.
                 </span>
               </div>
               <div style={styles.bottomBottom}>
