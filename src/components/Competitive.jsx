@@ -7,6 +7,7 @@ import "./Competitive.css";
 
 const LEETCODE_USERNAME = "Ankur160305";
 const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+console.log("Current API BASE_URL:", BASE_URL);
 
 const Competitive = () => {
   const [stats, setStats] = useState({
